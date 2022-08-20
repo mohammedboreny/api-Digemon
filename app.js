@@ -27,12 +27,10 @@ function getData(moveName) {
     // one of stander URL role is the url doesn't accept whitespace here we are replace whitespace whit '+' (this info from api documentation)
     // handle whitespace 
     moveName = moveName.replace(' ', '+');
-    method: GET
     // fetch function take api URL as as parameter 
     // the url must have api key and move name   
     fetch("https://digimon-api.herokuapp.com/api/digimon/name/"+moveName)
-        // convert response to object by json() method  
-  
+        // convert response to object by json() method 
         .then((response) => response.json())
         // after we handle the response 
         .then((data) => {
